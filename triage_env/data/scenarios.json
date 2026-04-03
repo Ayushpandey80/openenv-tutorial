@@ -1,0 +1,121 @@
+[
+  {
+    "id": "easy_001",
+    "difficulty": "easy",
+    "patient": {
+      "age": 34,
+      "sex": "F",
+      "chief_complaint": "Severe right wrist pain and swelling after falling off a bicycle 2 hours ago. Unable to move wrist.",
+      "vitals": {"hr": 82, "bp": "128/78", "temp": 98.4, "spo2": 99, "rr": 16},
+      "history": "No significant past medical history. No medications.",
+      "clarification_responses": {
+        "deformity": "Visible deformity noted at the distal forearm. No open wound.",
+        "neurovascular": "Fingers are warm with intact sensation and capillary refill < 2 seconds."
+      }
+    },
+    "ground_truth": {
+      "urgency": 4,
+      "specialty": "orthopedics",
+      "acceptable_specialties": ["orthopedics", "emergency_medicine"],
+      "requires_clarification": false,
+      "optimal_steps": 2,
+      "danger_misroutes": ["cardiology", "neurology", "psychiatry"]
+    }
+  },
+  {
+    "id": "easy_002",
+    "difficulty": "easy",
+    "patient": {
+      "age": 8,
+      "sex": "M",
+      "chief_complaint": "Sore throat and fever for 2 days. Temperature at home was 101.5°F. Difficulty swallowing solids but tolerating liquids.",
+      "vitals": {"hr": 110, "bp": "98/60", "temp": 101.2, "spo2": 99, "rr": 20},
+      "history": "Up to date on vaccinations. No allergies. No prior hospitalizations.",
+      "clarification_responses": {
+        "rash": "No rash noted.",
+        "breathing": "No difficulty breathing. No drooling."
+      }
+    },
+    "ground_truth": {
+      "urgency": 4,
+      "specialty": "pediatrics",
+      "acceptable_specialties": ["pediatrics", "family_medicine", "emergency_medicine"],
+      "requires_clarification": false,
+      "optimal_steps": 2,
+      "danger_misroutes": ["cardiology", "surgery"]
+    }
+  },
+  {
+    "id": "medium_001",
+    "difficulty": "medium",
+    "patient": {
+      "age": 58,
+      "sex": "M",
+      "chief_complaint": "Substernal chest pressure radiating to left arm for the past 45 minutes. Mild shortness of breath. Feels nauseated.",
+      "vitals": {"hr": 98, "bp": "158/95", "temp": 98.6, "spo2": 96, "rr": 22},
+      "history": "Hypertension, type 2 diabetes. Takes metformin and lisinopril. Smoker, 1 pack/day for 30 years.",
+      "clarification_responses": {
+        "onset": "Pain started while watching TV. No exertion. Similar episode 3 months ago that resolved on its own.",
+        "ecg": "ECG shows ST-segment elevation in leads II, III, and aVF.",
+        "family_history": "Father had MI at age 52."
+      }
+    },
+    "ground_truth": {
+      "urgency": 1,
+      "specialty": "cardiology",
+      "acceptable_specialties": ["cardiology", "emergency_medicine"],
+      "requires_clarification": true,
+      "optimal_steps": 3,
+      "danger_misroutes": ["gastroenterology", "psychiatry", "pulmonology"]
+    }
+  },
+  {
+    "id": "medium_002",
+    "difficulty": "medium",
+    "patient": {
+      "age": 42,
+      "sex": "F",
+      "chief_complaint": "Severe headache for 6 hours, worst headache of her life. Started suddenly while at work. Mild neck stiffness.",
+      "vitals": {"hr": 88, "bp": "165/100", "temp": 99.1, "spo2": 98, "rr": 18},
+      "history": "Occasional migraines treated with sumatriptan. Oral contraceptive use. No prior surgeries.",
+      "clarification_responses": {
+        "neuro_exam": "Alert and oriented. No focal deficits. Mild photophobia present.",
+        "onset_detail": "Thunderclap onset — reached maximum intensity within seconds. Different from her usual migraines.",
+        "vomiting": "Vomited twice since onset."
+      }
+    },
+    "ground_truth": {
+      "urgency": 1,
+      "specialty": "neurology",
+      "acceptable_specialties": ["neurology", "neurosurgery", "emergency_medicine"],
+      "requires_clarification": true,
+      "optimal_steps": 3,
+      "danger_misroutes": ["family_medicine", "psychiatry", "ophthalmology"]
+    }
+  },
+  {
+    "id": "hard_001",
+    "difficulty": "hard",
+    "patient": {
+      "age": 71,
+      "sex": "M",
+      "chief_complaint": "Progressively worsening confusion over the past 12 hours. Family reports he has been 'not himself' — forgetful, agitated, and had one episode of urinary incontinence.",
+      "vitals": {"hr": 105, "bp": "100/62", "temp": 101.8, "spo2": 93, "rr": 24},
+      "history": "Alzheimer's disease (mild), benign prostatic hyperplasia, chronic kidney disease stage 3. Recent urinary catheter placement 1 week ago.",
+      "clarification_responses": {
+        "urine": "Urine appears cloudy and foul-smelling. Foley catheter in place.",
+        "medication": "Current medications: donepezil, tamsulosin. No recent changes. Family unsure about adherence.",
+        "neuro": "GCS 13 (E3 V4 M6). No focal neurological deficits. No signs of trauma.",
+        "chest": "Bilateral crackles at bases on auscultation. No wheezing."
+      }
+    },
+    "ground_truth": {
+      "urgency": 2,
+      "specialty": "internal_medicine",
+      "acceptable_specialties": ["internal_medicine", "emergency_medicine", "geriatrics"],
+      "requires_clarification": true,
+      "optimal_steps": 4,
+      "danger_misroutes": ["psychiatry", "neurology", "orthopedics"]
+    }
+  }
+]
