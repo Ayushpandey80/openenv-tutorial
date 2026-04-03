@@ -1,3 +1,11 @@
+---
+title: Clinical Triage Gym
+emoji: 🏥
+colorFrom: blue
+colorTo: red
+sdk: docker
+pinned: false
+---
 # 🏥 Clinical Triage Gym
 
 An OpenEnv-compatible RL environment for training AI agents on clinical triage — assessing patient urgency and routing to the correct medical specialty, scored against the **Emergency Severity Index (ESI)**.
