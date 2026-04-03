@@ -34,9 +34,10 @@ except ImportError:
 
 # Create the FastAPI app using OpenEnv's create_app helper
 app = create_app(
-    environment_cls=TriageEnvironment,
-    action_model=TriageAction,
-    observation_model=TriageObservation,
+    TriageEnvironment,
+    TriageAction,
+    TriageObservation,
+    env_name="triage_env"
 )
 
 
