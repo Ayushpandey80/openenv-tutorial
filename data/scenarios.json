@@ -10,7 +10,8 @@
       "history": "No significant past medical history. No medications.",
       "clarification_responses": {
         "deformity": "Visible deformity noted at the distal forearm. No open wound.",
-        "neurovascular": "Fingers are warm with intact sensation and capillary refill < 2 seconds."
+        "neurovascular": "Fingers are warm with intact sensation and capillary refill < 2 seconds.",
+        "pain": "Pain is constant and worsened by any attempt to move the wrist."
       }
     },
     "ground_truth": {
@@ -33,7 +34,8 @@
       "history": "Up to date on vaccinations. No allergies. No prior hospitalizations.",
       "clarification_responses": {
         "rash": "No rash noted.",
-        "breathing": "No difficulty breathing. No drooling."
+        "breathing": "No difficulty breathing. No drooling.",
+        "duration": "Symptoms started 2 days ago and have been gradually worsening."
       }
     },
     "ground_truth": {
@@ -43,6 +45,78 @@
       "requires_clarification": false,
       "optimal_steps": 2,
       "danger_misroutes": ["cardiology", "surgery"]
+    }
+  },
+  {
+    "id": "easy_003",
+    "difficulty": "easy",
+    "patient": {
+      "age": 28,
+      "sex": "M",
+      "chief_complaint": "Twisted right ankle while playing basketball 3 hours ago. Swelling and bruising present. Can bear weight with pain.",
+      "vitals": {"hr": 76, "bp": "120/75", "temp": 98.6, "spo2": 99, "rr": 14},
+      "history": "Previous ankle sprain 2 years ago, resolved completely. No medications.",
+      "clarification_responses": {
+        "deformity": "No obvious deformity. Swelling over lateral malleolus.",
+        "weight_bearing": "Can walk with a limp. Pain rated 5/10.",
+        "mechanism": "Landed awkwardly after a jump. Heard a pop."
+      }
+    },
+    "ground_truth": {
+      "urgency": 5,
+      "specialty": "orthopedics",
+      "acceptable_specialties": ["orthopedics", "emergency_medicine", "family_medicine"],
+      "requires_clarification": false,
+      "optimal_steps": 2,
+      "danger_misroutes": ["cardiology", "neurology", "surgery"]
+    }
+  },
+  {
+    "id": "easy_004",
+    "difficulty": "easy",
+    "patient": {
+      "age": 45,
+      "sex": "F",
+      "chief_complaint": "Itchy red rash on both forearms for 3 days. Started after gardening. No fever, no difficulty breathing.",
+      "vitals": {"hr": 72, "bp": "118/72", "temp": 98.4, "spo2": 99, "rr": 14},
+      "history": "Known seasonal allergies. Takes cetirizine as needed. No other medical conditions.",
+      "clarification_responses": {
+        "spread": "Rash is limited to both forearms where skin was exposed to plants.",
+        "blisters": "Small vesicles present in a linear pattern. No oozing.",
+        "medications": "Tried over-the-counter hydrocortisone cream with minimal relief."
+      }
+    },
+    "ground_truth": {
+      "urgency": 5,
+      "specialty": "dermatology",
+      "acceptable_specialties": ["dermatology", "family_medicine", "emergency_medicine"],
+      "requires_clarification": false,
+      "optimal_steps": 2,
+      "danger_misroutes": ["cardiology", "surgery", "neurology"]
+    }
+  },
+  {
+    "id": "easy_005",
+    "difficulty": "easy",
+    "patient": {
+      "age": 62,
+      "sex": "M",
+      "chief_complaint": "Mild low back pain for 1 week after lifting heavy boxes. Pain is dull and aching. No radiation to legs.",
+      "vitals": {"hr": 78, "bp": "132/82", "temp": 98.6, "spo2": 98, "rr": 16},
+      "history": "Hypertension controlled with amlodipine. No previous back surgeries.",
+      "clarification_responses": {
+        "neuro": "No numbness, tingling, or weakness in legs. No bowel or bladder changes.",
+        "severity": "Pain is 4/10, worse with bending. Improved with rest and ibuprofen.",
+        "red_flags": "No history of cancer. No recent weight loss. No night sweats."
+      }
+    },
+    "ground_truth": {
+      "urgency": 5,
+      "specialty": "family_medicine",
+      "acceptable_specialties": ["family_medicine", "orthopedics", "emergency_medicine"],
+      "requires_clarification": false,
+      "optimal_steps": 2,
+      "danger_misroutes": ["cardiology", "neurosurgery", "oncology"]
     }
   },
   {
@@ -94,6 +168,78 @@
     }
   },
   {
+    "id": "medium_003",
+    "difficulty": "medium",
+    "patient": {
+      "age": 35,
+      "sex": "F",
+      "chief_complaint": "Sudden onset severe right-sided abdominal pain for 4 hours. Pain is sharp, constant, and worsening. Missed last menstrual period.",
+      "vitals": {"hr": 105, "bp": "100/65", "temp": 98.8, "spo2": 99, "rr": 20},
+      "history": "Previous ectopic pregnancy 3 years ago. No current medications. Sexually active.",
+      "clarification_responses": {
+        "lmp": "Last menstrual period was 7 weeks ago. Home pregnancy test positive this morning.",
+        "bleeding": "Mild vaginal spotting noted. No heavy bleeding.",
+        "shoulder_pain": "Reports mild right shoulder discomfort when lying flat."
+      }
+    },
+    "ground_truth": {
+      "urgency": 2,
+      "specialty": "obstetrics_gynecology",
+      "acceptable_specialties": ["obstetrics_gynecology", "emergency_medicine", "surgery"],
+      "requires_clarification": true,
+      "optimal_steps": 3,
+      "danger_misroutes": ["gastroenterology", "urology", "family_medicine"]
+    }
+  },
+  {
+    "id": "medium_004",
+    "difficulty": "medium",
+    "patient": {
+      "age": 68,
+      "sex": "M",
+      "chief_complaint": "Progressive shortness of breath over 3 days. Now breathless at rest. Worsening bilateral leg swelling. Sleeps propped up on 3 pillows.",
+      "vitals": {"hr": 112, "bp": "90/60", "temp": 98.2, "spo2": 88, "rr": 28},
+      "history": "Known congestive heart failure (EF 30%), atrial fibrillation. Takes furosemide, carvedilol, apixaban. Ran out of furosemide 5 days ago.",
+      "clarification_responses": {
+        "lung_exam": "Bilateral crackles to mid-lung fields. Jugular venous distension present.",
+        "weight": "Gained 8 pounds over the last week.",
+        "chest_pain": "No chest pain. No palpitations. Denies cough with pink sputum."
+      }
+    },
+    "ground_truth": {
+      "urgency": 2,
+      "specialty": "cardiology",
+      "acceptable_specialties": ["cardiology", "emergency_medicine", "pulmonology"],
+      "requires_clarification": true,
+      "optimal_steps": 3,
+      "danger_misroutes": ["orthopedics", "family_medicine", "dermatology"]
+    }
+  },
+  {
+    "id": "medium_005",
+    "difficulty": "medium",
+    "patient": {
+      "age": 22,
+      "sex": "M",
+      "chief_complaint": "Sudden onset severe left-sided chest pain aggravated by deep breathing. Started 2 hours ago while at rest. Tall and thin build.",
+      "vitals": {"hr": 102, "bp": "125/80", "temp": 98.6, "spo2": 93, "rr": 24},
+      "history": "No prior medical history. Non-smoker. No medications. No recent trauma or travel.",
+      "clarification_responses": {
+        "breathing": "Pain sharp and pleuritic. Feels like he cannot take a full breath.",
+        "lung_sounds": "Diminished breath sounds on the left side compared to right.",
+        "history": "Has had one similar but milder episode 6 months ago that resolved on its own."
+      }
+    },
+    "ground_truth": {
+      "urgency": 2,
+      "specialty": "pulmonology",
+      "acceptable_specialties": ["pulmonology", "emergency_medicine", "surgery"],
+      "requires_clarification": true,
+      "optimal_steps": 3,
+      "danger_misroutes": ["orthopedics", "gastroenterology", "psychiatry"]
+    }
+  },
+  {
     "id": "hard_001",
     "difficulty": "hard",
     "patient": {
@@ -116,6 +262,106 @@
       "requires_clarification": true,
       "optimal_steps": 4,
       "danger_misroutes": ["psychiatry", "neurology", "orthopedics"]
+    }
+  },
+  {
+    "id": "hard_002",
+    "difficulty": "hard",
+    "patient": {
+      "age": 55,
+      "sex": "F",
+      "chief_complaint": "Severe epigastric pain radiating to the back for 8 hours. Nausea and multiple episodes of vomiting. Pain worse after eating a fatty meal last night.",
+      "vitals": {"hr": 118, "bp": "95/58", "temp": 100.8, "spo2": 95, "rr": 22},
+      "history": "Gallstones diagnosed 2 years ago (declined surgery). Type 2 diabetes, obesity (BMI 38). Heavy alcohol use (2-3 drinks daily). Takes metformin.",
+      "clarification_responses": {
+        "abdomen": "Abdomen is rigid and diffusely tender. Guarding present in epigastric region. Bowel sounds hypoactive.",
+        "labs": "Lipase would likely be significantly elevated. Patient appears jaundiced.",
+        "alcohol": "Had 4 drinks yesterday in addition to the fatty meal. Reports similar but milder episodes in the past.",
+        "fever": "Temperature trending up. Was 99.5 four hours ago, now 100.8."
+      }
+    },
+    "ground_truth": {
+      "urgency": 2,
+      "specialty": "gastroenterology",
+      "acceptable_specialties": ["gastroenterology", "surgery", "emergency_medicine"],
+      "requires_clarification": true,
+      "optimal_steps": 4,
+      "danger_misroutes": ["family_medicine", "psychiatry", "orthopedics"]
+    }
+  },
+  {
+    "id": "hard_003",
+    "difficulty": "hard",
+    "patient": {
+      "age": 48,
+      "sex": "M",
+      "chief_complaint": "Sudden onset severe tearing pain in the chest radiating to the back. Patient is diaphoretic and appears anxious. Blood pressure markedly different between arms.",
+      "vitals": {"hr": 115, "bp": "185/110", "temp": 98.4, "spo2": 94, "rr": 26},
+      "history": "Poorly controlled hypertension for 15 years. Marfan-like body habitus. Does not take medications regularly. Family history of aortic disease.",
+      "clarification_responses": {
+        "bp_arms": "Right arm BP 185/110, left arm BP 140/85. Difference of 45 mmHg systolic.",
+        "pulses": "Left radial pulse is weaker than right. Femoral pulses palpable bilaterally.",
+        "neuro": "Alert and oriented but extremely anxious. No focal neurological deficits currently.",
+        "onset": "Pain started abruptly 90 minutes ago while lifting a heavy object. Describes it as 'ripping' sensation."
+      }
+    },
+    "ground_truth": {
+      "urgency": 1,
+      "specialty": "cardiology",
+      "acceptable_specialties": ["cardiology", "surgery", "emergency_medicine"],
+      "requires_clarification": true,
+      "optimal_steps": 3,
+      "danger_misroutes": ["orthopedics", "gastroenterology", "family_medicine", "psychiatry"]
+    }
+  },
+  {
+    "id": "hard_004",
+    "difficulty": "hard",
+    "patient": {
+      "age": 30,
+      "sex": "F",
+      "chief_complaint": "Progressive weakness in both legs over 5 days. Started as tingling in feet, now having difficulty walking. Arms feel heavy since yesterday. Had a respiratory infection 2 weeks ago.",
+      "vitals": {"hr": 92, "bp": "110/70", "temp": 98.6, "spo2": 96, "rr": 20},
+      "history": "No chronic medical conditions. No medications. Had a campylobacter gastroenteritis 3 weeks ago treated with antibiotics.",
+      "clarification_responses": {
+        "neuro_exam": "Symmetric ascending weakness: hip flexion 3/5, knee extension 4/5, ankle dorsiflexion 2/5. Absent ankle reflexes, diminished knee reflexes.",
+        "respiratory": "Can count to 15 in one breath (normal >20). Negative inspiratory force -30 cmH2O (concerning if less than -25).",
+        "progression": "Weakness progressing daily. Could walk with a walker yesterday, today needs wheelchair.",
+        "autonomic": "Episodes of tachycardia and blood pressure fluctuations. Lightheaded when sitting up."
+      }
+    },
+    "ground_truth": {
+      "urgency": 2,
+      "specialty": "neurology",
+      "acceptable_specialties": ["neurology", "emergency_medicine"],
+      "requires_clarification": true,
+      "optimal_steps": 4,
+      "danger_misroutes": ["orthopedics", "psychiatry", "family_medicine", "dermatology"]
+    }
+  },
+  {
+    "id": "hard_005",
+    "difficulty": "hard",
+    "patient": {
+      "age": 6,
+      "sex": "M",
+      "chief_complaint": "High fever (104°F), severe irritability, and a non-blanching purplish rash on legs and trunk noticed 3 hours ago. Child is lethargic and refuses to eat or drink.",
+      "vitals": {"hr": 160, "bp": "75/45", "temp": 104.2, "spo2": 94, "rr": 32},
+      "history": "Previously healthy. Vaccinations up to date except missed meningococcal booster. Had a runny nose 2 days ago.",
+      "clarification_responses": {
+        "rash": "Petechial and purpuric rash spreading rapidly. Does not blanch with pressure. New lesions appearing.",
+        "neuro": "Child is drowsy but arousable. Neck stiffness present. Positive Kernig and Brudzinski signs.",
+        "hydration": "Capillary refill 4 seconds. Dry mucous membranes. Last urination 8 hours ago.",
+        "contacts": "Attends daycare. No known sick contacts with meningitis. Older sibling had strep throat last week."
+      }
+    },
+    "ground_truth": {
+      "urgency": 1,
+      "specialty": "pediatrics",
+      "acceptable_specialties": ["pediatrics", "emergency_medicine"],
+      "requires_clarification": true,
+      "optimal_steps": 3,
+      "danger_misroutes": ["dermatology", "family_medicine", "psychiatry", "orthopedics"]
     }
   }
 ]
