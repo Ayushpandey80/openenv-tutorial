@@ -13,6 +13,9 @@ COPY . .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir "openenv-core[core]>=0.2.2" "faker>=33.0.0" uvicorn fastapi gradio
 
+# Set OpenEnv to generate the Gradio Web UI
+ENV ENABLE_WEB_INTERFACE=true
+
 # Expose the port
 EXPOSE 7860
 
