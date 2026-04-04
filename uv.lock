@@ -1616,6 +1616,7 @@ version = "1.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "faker" },
+    { name = "gradio" },
     { name = "openenv-core", extra = ["core"] },
 ]
 
@@ -1631,6 +1632,7 @@ inference = [
 [package.metadata]
 requires-dist = [
     { name = "faker", specifier = ">=33.0.0" },
+    { name = "gradio", specifier = ">=4.0.0" },
     { name = "openai", marker = "extra == 'inference'", specifier = ">=1.0.0" },
     { name = "openenv-core", extras = ["core"], specifier = ">=0.2.2" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0" },
