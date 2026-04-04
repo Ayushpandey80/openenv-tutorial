@@ -181,8 +181,10 @@ def main():
     print(f"Using model: {MODEL_NAME}")
     
     # Need auth header for the OpenEnv proxy? Typically OpenAI client allows base_url
+    api_base = API_BASE_URL if API_BASE_URL.endswith("/v1") else f"{API_BASE_URL}/v1"
+    
     client = OpenAI(
-        base_url=API_BASE_URL + "/v1", 
+        base_url=api_base, 
         api_key=HF_TOKEN or "dummy-token"
     )
 
